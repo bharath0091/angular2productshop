@@ -1,0 +1,17 @@
+{
+  "files": [
+    "src/main.ts",
+    "src/print.ts",
+    "src/types.ts"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "experimentalDecorators" : true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

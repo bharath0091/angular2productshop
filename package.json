@@ -1,0 +1,43 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "my ts prj",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "bharath0091",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "~2.3.0",
+    "@angular/compiler": "~2.3.0",
+    "@angular/core": "~2.3.0",
+    "@angular/forms": "~2.3.0",
+    "@angular/http": "~2.3.0",
+    "@angular/platform-browser": "~2.3.0",
+    "@angular/platform-browser-dynamic": "~2.3.0",
+    "@angular/router": "~3.3.0",
+    "angular-in-memory-web-api": "~0.1.17",
+    "core-js": "^2.4.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.2.0",
+    "systemjs": "^0.19.40",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.8",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.3.0",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.2.3",
+    "gulp-typescript": "^3.1.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "tsify": "^3.0.0",
+    "typescript": "^2.1.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.8.0"
+  }
+}
