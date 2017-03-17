@@ -6,6 +6,7 @@ import { AppComponent }  from './app.component';
 import {HeroFormComponent} from './hero-form.component';
 import {ProductShopComponent} from './product-shop.component'
 import {ProductService} from './product.service'
+import {ProductFilterByName} from "./product-filter-by-name.pipe";
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {ProductService} from './product.service'
     declarations: [
         AppComponent,
         HeroFormComponent,
-        ProductShopComponent
+        ProductShopComponent,
+        ProductFilterByName
     ],
     providers: [ ProductService ],
     bootstrap: [ AppComponent ]
