@@ -13,6 +13,7 @@ export class ProductShopComponent implements OnInit {
 
     constructor(private productService: ProductService) { }
 
+//TODO check if return type is best practise
     ngOnInit(): void {
         //TODO introduce delay
         this.products = this.productService.getProducts();
