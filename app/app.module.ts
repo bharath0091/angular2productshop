@@ -10,6 +10,7 @@ import {ProductService} from './product.service'
 import {ProductFilterByName} from "./product-filter-by-name.pipe";
 import {ProductDetailComponent} from "./product-detail.component";
 import {AppRoutingModule} from "./app-routing.module";
+import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
 
 @NgModule({
     imports: [
@@ -24,7 +25,7 @@ import {AppRoutingModule} from "./app-routing.module";
         ProductFilterByName,
         ProductDetailComponent
     ],
-    providers: [ ProductService ],
+    providers: [ ProductService, ShoppingCartManager ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

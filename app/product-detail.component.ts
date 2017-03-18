@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product }        from './product';
+import { Product }        from './product.model';
 import { ProductService } from './product.service';
 import {ActivatedRoute, Params} from "@angular/router";
+import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
 
 @Component({
     moduleId: module.id,
@@ -11,17 +12,23 @@ import {ActivatedRoute, Params} from "@angular/router";
 })
 export class ProductDetailComponent implements OnInit {
     product: Product;
+    quantity : number = 1;
 
-    constructor(private productService: ProductService, private route: ActivatedRoute) { }
+    constructor(private productService: ProductService,
+                private route: ActivatedRoute,
+                private shoppingCartManager : ShoppingCartManager) { }
 
     ngOnInit(): void {
         //TODO introduce delay
-        let id = +this.route.snapshot.params['id'];
-        console.log("id .........." + id);
-        this.product = this.productService.getProduct(id);
+        this.product = this.productService.getProduct(+this.route.snapshot.params['id']);
+        this.quantity = this.shoppingCartManager.getProductQuantity(this.product) || 1;
     }
 
     onKey(searchValue : String) : void {
         console.log(searchValue);
+    }
+    addToCart() {
+        console.log("this.quantity...." + this.quantity);
+        this.shoppingCartManager.addOrUpdateProduct(this.product, this.quantity);
     }
 }

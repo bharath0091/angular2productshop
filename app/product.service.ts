@@ -1,6 +1,6 @@
 import { Injectable }    from '@angular/core';
 
-import { Product } from './product';
+import { Product } from './product.model';
 import ProductsMock from './products.mock';
 
 @Injectable()
