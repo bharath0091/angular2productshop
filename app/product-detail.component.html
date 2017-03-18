@@ -1,10 +1,13 @@
 <h3>Mobile shopping portal</h3>
-<input #searchText placeholder="Search" (keyup) = "onKey(searchText.value)" id="search">
-<div class="grid grid-pad">
-
-        <div class="module product">
-            <h4>{{product.name}}</h4>
-        </div>
-    <button (click) = "addToCart">Add to cart</button>
-    <a class="col-1-4" [routerLink]="['/landing']">Continue Shopping</a>
+<div class="container">
+   <div class="row">
+       <div class="col-sm-4">
+           <h4>{{product.name}}</h4>
+       </div>
+       <div class="col-sm-4">
+           <h4>{{product.name}}</h4>
+       </div>
+       <button (click) = "addToCart">Add to cart</button>
+       <a class="col-1-4" [routerLink]="['/landing']">Continue Shopping</a>
+   </div>
 </div>
