@@ -4,6 +4,10 @@ import {CartProduct} from "./cart-product.model";
 export class ShoppingCartManager{
     cartProducts : [CartProduct] = [];
 
+    getCartProducts() : [CartProduct] {
+        return this.cartProducts;
+    }
+
     addOrUpdateProduct(product : Product, quantity : number) : void {
         let cartProduct : CartProduct = this.getCartProduct(product);
         if(cartProduct) {

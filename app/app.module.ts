@@ -11,6 +11,7 @@ import {ProductFilterByName} from "./product-filter-by-name.pipe";
 import {ProductDetailComponent} from "./product-detail.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
+import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
         HeroFormComponent,
         ProductShopComponent,
         ProductFilterByName,
-        ProductDetailComponent
+        ProductDetailComponent,
+        ShoppingCartComponent
     ],
     providers: [ ProductService, ShoppingCartManager ],
     bootstrap: [ AppComponent ]

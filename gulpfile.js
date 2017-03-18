@@ -6,7 +6,7 @@ var tsify = require("tsify");
 var gutil = require("gulp-util");
 
 var paths = {
-    pages: ['./*.html', 'app/*.html', './*.css', 'app/*.css']
+    pages: ['app/shopping-cart/*.html', 'app/shopping-cart/*.css', './*.html', 'app/*.html', './*.css', 'app/*.css']
 };
 
 var watchedBrowserify = watchify(browserify({
@@ -15,7 +15,7 @@ var watchedBrowserify = watchify(browserify({
     entries: ['./main.ts'],
     cache: {},
     packageCache: {}
-}).plugin(tsify));
+}).plugin(tsify), {delay: 10});
 
 gulp.task("copy-html", function () {
     return gulp.src(paths.pages)

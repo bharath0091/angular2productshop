@@ -29,6 +29,6 @@ export class ProductDetailComponent implements OnInit {
     }
     addToCart() {
         console.log("this.quantity...." + this.quantity);
-        this.shoppingCartManager.addOrUpdateProduct(this.product, this.quantity);
+        this.shoppingCartManager.addOrUpdateProduct(this.product, +this.quantity);
     }
 }

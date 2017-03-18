@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <table class="table table-fixed">
+                <thead>
+                <tr>
+                    <th class="col-xs-4">Product</th>
+                    <th class="col-xs-2">Quantity</th>
+                    <th class="col-xs-2">Rate in $</th>
+                    <th class="col-xs-2">Price in $</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let cartProduct of cartProducts">
+                    <td class="col-xs-4">{{cartProduct.product.name}}</td>
+                    <td class="col-xs-2">
+                        <select #quantity (change)="updateCart(cartProduct.product, quantity.value)">
+                            <option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+                                    [value] = "i"
+                                    [selected]="cartProduct.quantity === +i">
+                                {{i}}
+                            </option>
+                            <!--TODO why do we have to send product while we have cartProduct itself-->
+                        </select>
+                    </td>
+                    <td class="col-xs-2">{{cartProduct.product.rate}}</td>
+                    <td class="col-xs-2">{{cartProduct.price}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="pull-right">
+        <label>Total </label> ${{totalPrice}}
+    </div>
+    <a class="col-1-4" [routerLink]="['/landing']">Continue Shopping</a>
+</div>
