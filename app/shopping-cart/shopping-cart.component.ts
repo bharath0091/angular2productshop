@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Product }        from './product.model';
 import { ProductService } from './product.service';
-import {CartProduct} from "./cart-product.model";
+import {ShoppingCartProduct} from "./shopping-cart-product.model";
 import {ShoppingCartManager} from "./shopping-cart.manager";
+import {ShoppingCart} from "./shopping-cart.model";
 
 @Component({
     moduleId: module.id,
@@ -11,20 +12,21 @@ import {ShoppingCartManager} from "./shopping-cart.manager";
     styleUrls: [ './shopping-cart.component.css' ]
 })
 export class ShoppingCartComponent implements OnInit {
-    cartProducts: CartProduct[] = [];
-    totalPrice: CartProduct[] = [];
+    shoppingCart : ShoppingCart;
 
     constructor(private shoppingCartManager: ShoppingCartManager) { }
 
     ngOnInit(): void {
-        this.cartProducts = this.shoppingCartManager.getCartProducts();
-        //TODO Cart domain class can be created
-        this.totalPrice = this.shoppingCartManager.price;
+        this.shoppingCart = this.shoppingCartManager.getShoppingCart()
     }
 
     updateCart(product : Product, quantity : number) {
         console.log("quantity " + quantity);
         //TODO cant i avoid this plus
-        this.shoppingCartManager.addOrUpdateProduct(product, +quantity)
+        this.shoppingCartManager.addOrUpdateProduct(product, +quantity);
+    }
+
+    removeProduct(product : Product) {
+        this.shoppingCartManager.removeProduct(product);
     }
 }

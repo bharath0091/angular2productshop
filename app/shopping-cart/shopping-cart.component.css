@@ -1,3 +1,8 @@
+.remove-product {
+    height: 15px;
+    width: 15px
+}
+
 .table-fixed thead {
     width: 97%;
 }

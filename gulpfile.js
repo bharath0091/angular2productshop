@@ -6,7 +6,7 @@ var tsify = require("tsify");
 var gutil = require("gulp-util");
 
 var paths = {
-    pages: ['app/shopping-cart/*.html', 'app/shopping-cart/*.css', './*.html', 'app/*.html', './*.css', 'app/*.css']
+    pages: ['app/images/*.*', 'app/shopping-cart/*.html', 'app/shopping-cart/*.css', './*.html', 'app/*.html', './*.css', 'app/*.css']
 };
 
 var watchedBrowserify = watchify(browserify({
