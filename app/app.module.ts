@@ -1,14 +1,12 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
-import { Router } from '@angular/router';
 
 import { AppComponent }  from './app.component';
-import {HeroFormComponent} from './hero-form.component';
-import {ProductShopComponent} from './product-shop.component'
-import {ProductService} from './product.service'
-import {ProductFilterByName} from "./product-filter-by-name.pipe";
-import {ProductDetailComponent} from "./product-detail.component";
+import {ListProductComponent} from './list-product/list-product.component'
+import {ProductService} from './list-product/product.service'
+import {ProductFilterByName} from "./product-detail/product-filter-by-name.pipe";
+import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
@@ -24,8 +22,7 @@ import {LoginService} from "./login/login-service";
     ],
     declarations: [
         AppComponent,
-        HeroFormComponent,
-        ProductShopComponent,
+        ListProductComponent,
         ProductFilterByName,
         ProductDetailComponent,
         ShoppingCartComponent,

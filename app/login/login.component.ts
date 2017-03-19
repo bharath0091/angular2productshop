@@ -3,6 +3,7 @@ import {LoginService} from "./login-service";
 import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
 import {UserNameValidator} from "./login-validator-username.validator";
 import {PasswordValidator} from "./login-validator-password.validator";
+import {Router} from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
     form : FormGroup;
 
     constructor(private loginService: LoginService,
-                private formBuilder : FormBuilder) { }
+                private formBuilder : FormBuilder,
+                private router: Router) { }
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
@@ -23,6 +25,10 @@ export class LoginComponent implements OnInit {
         })
         this.form.valueChanges
             .subscribe(data => this.onValueChanged(data));
+    }
+
+    submit() {
+        this.router.navigate(['/landing']);;
     }
 
     onValueChanged(data?: any) {
@@ -53,7 +59,7 @@ export class LoginComponent implements OnInit {
         },
         'password': {
             'required': 'Password is required.',
-            'minlength':     'Password length must be at least 4.',
+            'minlength':     'Password length must be at least 8.',
             'maxlength':     'Password lenghth cannot be more than 15.',
             'pattern': 'Password must contain a special character.'
         }

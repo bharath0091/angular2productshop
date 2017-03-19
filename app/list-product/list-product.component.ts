@@ -5,10 +5,10 @@ import { ProductService } from './product.service';
 @Component({
     moduleId: module.id,
     selector: 'product-shop',
-    templateUrl: './product-shop.component.html',
-    styleUrls: [ './product-shop.component.css' ]
+    templateUrl: 'list-product.component.html',
+    styleUrls: [ 'list-product.component.css' ]
 })
-export class ProductShopComponent implements OnInit {
+export class ListProductComponent implements OnInit {
     products: Product[] = [];
 
     constructor(private productService: ProductService) { }

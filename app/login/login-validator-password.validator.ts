@@ -2,7 +2,7 @@
 import {Validators, ValidatorFn} from "@angular/forms";
 
 export class PasswordValidator {
-    private static readonly ATLEAST_ONE_SPECIAL_CHAR_REGEX : RegExp= /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
+    private static readonly ATLEAST_ONE_SPECIAL_CHAR_REGEX : RegExp= /[-@#!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
 
     static get validator() : ValidatorFn[] {
         return [

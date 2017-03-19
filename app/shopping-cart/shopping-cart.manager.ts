@@ -1,4 +1,4 @@
-import {Product} from "../product.model";
+import {Product} from "../list-product/product.model";
 import {ShoppingCartProduct} from "./shopping-cart-product.model";
 import {ShoppingCart} from "./shopping-cart.model";
 
