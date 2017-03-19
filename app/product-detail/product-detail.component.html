@@ -1,20 +1,19 @@
-<h3>Mobile shopping portal</h3>
 <div class="container">
-    <a class="nav" [routerLink]="['/shopping-cart']" class="col-1-4">
-        Cart
-    </a>
-   <div class="row">
-       <div class="col-sm-4">
-           <h4>{{product?.name}}</h4>
-       </div>
-       <div class="col-sm-4">
-           <h4>{{product?.description}}</h4>
-           <label> Quantity</label>
-           <select [(ngModel)] = "quantity">
-               <option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">{{i}}</option>
-           </select>
-       </div>
-       <button (click) = "addToCart()">Add to cart</button>
-       <a class="col-1-4" [routerLink]="['/landing']">Continue Shopping</a>
-   </div>
+    <top-header></top-header>
+    <div class="row">
+        <div class="col-lg-4"><div class="well"><h4>{{product?.name}}</h4></div></div>
+        <div class="col-lg-4"><div class="well">
+            <h4>{{product?.description}}</h4>
+            <label> Quantity</label>
+            <select [(ngModel)] = "quantity">
+                <option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">{{i}}</option>
+            </select>
+        </div></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><div class="well pull-right"><button (click) = "addToCart()">Add to cart</button></div></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4"><div class="well"> <a class="col-1-4" [routerLink]="['/landing']">Continue Shopping</a></div></div>
+    </div>
 </div>

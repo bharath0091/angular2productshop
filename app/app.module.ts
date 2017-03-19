@@ -12,6 +12,7 @@ import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import {LoginComponent} from "./login/login.component";
 import {LoginService} from "./login/login-service";
+import {TopHeaderComponent} from "./common/top-header.component";
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import {LoginService} from "./login/login-service";
         ProductFilterByName,
         ProductDetailComponent,
         ShoppingCartComponent,
-        LoginComponent
+        LoginComponent,
+        TopHeaderComponent
     ],
     providers: [ ProductService, ShoppingCartManager, LoginService ],
     bootstrap: [ AppComponent ]

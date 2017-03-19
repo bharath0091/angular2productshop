@@ -1,4 +1,6 @@
-<h3>Mobile shopping portal</h3>
+<div class="container">
+    <top-header></top-header>
+</div>
 <input #searchText placeholder="Search" (keyup) = "onKey(searchText.value)" id="search">
 <div class="grid grid-pad">
     <a *ngFor="let product of products | productFilterByName : searchText.value"  [routerLink]="['/product-detail', product.id]" class="col-1-4">
