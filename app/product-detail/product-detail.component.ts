@@ -19,15 +19,17 @@ export class ProductDetailComponent implements OnInit {
                 private shoppingCartManager : ShoppingCartManager) { }
 
     ngOnInit(): void {
-        //TODO introduce delay
-        this.product = this.productService.getProduct(+this.route.snapshot.params['id']);
-        this.quantity = this.shoppingCartManager.getProductQuantity(this.product) || 1;
+        this.productService.getProduct(+this.route.snapshot.params['id'])
+            .subscribe((response : Product) => {
+                this.product = response;
+                this.quantity = this.shoppingCartManager.getProductQuantity(this.product) || 1;
+        });
     }
 
     onKey(searchValue : String) : void {
         console.log(searchValue);
     }
-    addToCart() {
+    addToCart() : void {
         console.log("this.quantity...." + this.quantity);
         this.shoppingCartManager.addOrUpdateProduct(this.product, +this.quantity);
     }

@@ -13,13 +13,12 @@ export class ListProductComponent implements OnInit {
 
     constructor(private productService: ProductService) { }
 
-//TODO check if return type is best practise
     ngOnInit(): void {
-        //TODO introduce delay
-        this.products = this.productService.getProducts();
+        this.productService.getProducts()
+            .subscribe((response : Product[]) => this.products = response);
     }
 
-    onKey(searchValue : String) {
+    onKey(searchValue : String) : void {
         console.log(searchValue);
     }
 }

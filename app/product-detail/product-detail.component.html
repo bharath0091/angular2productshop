@@ -5,10 +5,10 @@
     </a>
    <div class="row">
        <div class="col-sm-4">
-           <h4>{{product.name}}</h4>
+           <h4>{{product?.name}}</h4>
        </div>
        <div class="col-sm-4">
-           <h4>{{product.description}}</h4>
+           <h4>{{product?.description}}</h4>
            <label> Quantity</label>
            <select [(ngModel)] = "quantity">
                <option *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">{{i}}</option>
