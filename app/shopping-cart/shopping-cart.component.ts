@@ -22,7 +22,6 @@ export class ShoppingCartComponent implements OnInit {
 
     updateCart(product : Product, quantity : number) {
         console.log("quantity " + quantity);
-        //TODO cant i avoid this plus
         this.shoppingCartManager.addOrUpdateProduct(product, +quantity);
     }
 
