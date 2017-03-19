@@ -8,7 +8,6 @@
     "module": "commonjs",
     "target": "es2015",
     "sourceMap": true,
-    "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators" : true
   },

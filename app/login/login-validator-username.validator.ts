@@ -1,5 +1,5 @@
 
-import {Validators, ValidatorFn, AbstractControl} from "@angular/forms";
+import {Validators, ValidatorFn} from "@angular/forms";
 import {RegularExpValidator} from "./login-validator-regular-exp.validator";
 
 export class UserNameValidator {
@@ -8,7 +8,7 @@ export class UserNameValidator {
     static get validator() : ValidatorFn {
         return Validators.compose([
             Validators.required,
-            RegularExpValidator.validator("inValidUserName", this.VALID_EMAIL_REGEX)
+            RegularExpValidator.getValidator("inValidUserName", this.VALID_EMAIL_REGEX)
             ]);
     }
 }

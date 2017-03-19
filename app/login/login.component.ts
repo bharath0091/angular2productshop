@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
     }
 
     onValueChanged(data?: any) {
-        if (!this.heroForm) { return; }
-        const form = this.heroForm;
+        if (!this.form) { return; }
+        const form = this.form;
 
         for (const field in this.formErrors) {
             // clear previous error message (if any)

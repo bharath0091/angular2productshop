@@ -10,7 +10,7 @@ export class PasswordValidator {
             Validators.required,
             Validators.minLength(8),
             Validators.maxLength(15),
-            RegularExpValidator.validator("inValidPassword", this.ATLEAST_ONE_SPECIAL_CHAR_REGEX)
+            RegularExpValidator.getValidator("inValidPassword", this.ATLEAST_ONE_SPECIAL_CHAR_REGEX)
         ]);
     }
 }

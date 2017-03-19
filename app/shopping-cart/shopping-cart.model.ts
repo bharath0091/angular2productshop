@@ -1,7 +1,7 @@
 import {ShoppingCartProduct} from "./shopping-cart-product.model";
 
 export class ShoppingCart{
-    shoppingCartProducts : [ShoppingCartProduct] = [];
+    shoppingCartProducts : ShoppingCartProduct[] = [];
 
     get price() : number {
         return this.shoppingCartProducts

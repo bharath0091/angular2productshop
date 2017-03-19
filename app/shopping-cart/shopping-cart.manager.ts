@@ -6,7 +6,7 @@ export class ShoppingCartManager{
 
     private shoppingCart : ShoppingCart = new ShoppingCart();
 
-    getShoppingCart() : [ShoppingCartProduct] {
+    getShoppingCart() : ShoppingCart {
         return this.shoppingCart;
     }
 
