@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "./login-service";
-import {FormBuilder, FormGroup, Validators, FormControl} from "@angular/forms";
+import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
 import {UserNameValidator} from "./login-validator-username.validator";
 import {PasswordValidator} from "./login-validator-password.validator";
 
@@ -25,19 +25,13 @@ export class LoginComponent implements OnInit {
             .subscribe(data => this.onValueChanged(data));
     }
 
-    submit() {
-        console.log("Reactive Form submitted: ", this.form.valid);
-    }
-
     onValueChanged(data?: any) {
         if (!this.form) { return; }
         const form = this.form;
-
         for (const field in this.formErrors) {
             // clear previous error message (if any)
             this.formErrors[field] = '';
             const control = form.get(field);
-
             if (control && control.dirty && !control.valid) {
                 const messages = this.validationMessages[field];
                 for (const key in control.errors) {
@@ -55,13 +49,13 @@ export class LoginComponent implements OnInit {
     validationMessages = {
         'userName': {
             'required':      'User name is required.',
-            'inValidUserName': 'Given email is not a valid email.'
+            'pattern': 'Given email is not a valid email.'
         },
         'password': {
             'required': 'Password is required.',
             'minlength':     'Password length must be at least 4.',
             'maxlength':     'Password lenghth cannot be more than 15.',
-            'inValidPassword': 'Password must contain a special character.'
+            'pattern': 'Password must contain a special character.'
         }
     };
 }
