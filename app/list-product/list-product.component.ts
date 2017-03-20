@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import { Product }        from './product.model';
-import { ProductService } from './product.service';
+import {ProductServiceInterface} from "./product.service.interface";
+import {PRODUCT_SERVICE_TOKEN} from "../common/constants";
 
 @Component({
     moduleId: module.id,
@@ -11,7 +12,7 @@ import { ProductService } from './product.service';
 export class ListProductComponent implements OnInit {
     products: Product[] = [];
 
-    constructor(private productService: ProductService) { }
+    constructor(@Inject(PRODUCT_SERVICE_TOKEN) private productService: ProductServiceInterface) { }
 
     ngOnInit(): void {
         this.productService.getProducts()

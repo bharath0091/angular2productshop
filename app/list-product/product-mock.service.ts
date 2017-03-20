@@ -1,11 +1,12 @@
 import { Injectable }    from '@angular/core';
 
 import { Product } from './product.model';
-import ProductsMock from './products.mock';
+import ProductsMock from './product-mock.response';
 import {Observable, Observer} from "rxjs";
+import {ProductServiceInterface} from "./product.service.interface";
 
 @Injectable()
-export class ProductService {
+export class ProductMockService implements ProductServiceInterface{
 
     getProducts(): Observable<Product[]> {
         return  Observable.create((observer : Observer<Product[]>)=> {

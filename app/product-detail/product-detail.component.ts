@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Inject} from '@angular/core';
 import { Product }        from '../list-product/product.model';
-import { ProductService } from '../list-product/product.service';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {ShoppingCartManager} from "../shopping-cart/shopping-cart.manager";
+import {PRODUCT_SERVICE_TOKEN} from "../common/constants";
+import {ProductServiceInterface} from "../list-product/product.service.interface";
 
 @Component({
     moduleId: module.id,
@@ -14,7 +15,7 @@ export class ProductDetailComponent implements OnInit {
     product: Product;
     quantity : number = 1;
 
-    constructor(private productService: ProductService,
+    constructor(@Inject(PRODUCT_SERVICE_TOKEN) private productService: ProductServiceInterface,
                 private route: ActivatedRoute,
                 private shoppingCartManager : ShoppingCartManager) { }
 
