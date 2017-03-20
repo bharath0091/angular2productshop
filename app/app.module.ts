@@ -11,7 +11,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";
 import {LoginComponent} from "./login/login.component";
-import {LoginService} from "./login/login-service";
 import {TopHeaderComponent} from "./common/top-header.component";
 
 @NgModule({
@@ -30,7 +29,7 @@ import {TopHeaderComponent} from "./common/top-header.component";
         LoginComponent,
         TopHeaderComponent
     ],
-    providers: [ ProductService, ShoppingCartManager, LoginService ],
+    providers: [ ProductService, ShoppingCartManager ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
