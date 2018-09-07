@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import {ListProductComponent} from './list-product/list-product.component'
-import {ProductFilterByName} from "./product-detail/product-filter-by-name.pipe";
+import {ProductFilterByName} from "./list-product/product-filter-by-name.pipe";
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {ShoppingCartComponent} from "./shopping-cart/shopping-cart.component";

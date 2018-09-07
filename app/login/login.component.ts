@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     ngOnInit(): void {
         this.form = this.formBuilder.group({
             userName: new FormControl('', UserNameValidator.validator),
-            password: this.formBuilder.control('', PasswordValidator.validator)
+            password: new FormControl('', PasswordValidator.validator)
         })
         this.form.valueChanges
             .subscribe(data => this.onValueChanged(data));

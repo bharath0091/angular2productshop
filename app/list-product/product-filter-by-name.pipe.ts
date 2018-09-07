@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Product} from "../list-product/product.model";
+import {Product} from "./product.model";
 
 @Pipe({
     name: 'productFilterByName',
-    pure: false
+    pure: true
 })
 export class ProductFilterByName implements PipeTransform {
     transform(products: Product[], searchTerm: string): any[] {
