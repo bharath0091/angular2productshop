@@ -1,4 +1,3 @@
-
 import {PRODUCT_SERVICE_TOKEN} from "./common/constants";
 import {ProductMockService} from "./list-product/product-mock.service";
 import {ShoppingCartManager} from "./shopping-cart/shopping-cart.manager";
